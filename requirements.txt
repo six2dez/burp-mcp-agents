@@ -1,0 +1,4 @@
+# Python deps for the Ollama backend (safe to install for all setups)
+mcp
+ollama
+rich

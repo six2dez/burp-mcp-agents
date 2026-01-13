@@ -1,0 +1,13 @@
+:19876
+
+reverse_proxy 127.0.0.1:9876 {
+  # Match Origin and Host exactly (anti-DNS rebinding)
+  header_up Host "127.0.0.1:9876"
+  header_up Origin "http://127.0.0.1:9876"
+
+  # Workaround for Burp MCP SSE rejecting extra headers
+  header_up -User-Agent
+  header_up -Accept
+  header_up -Accept-Encoding
+  header_up -Connection
+}
